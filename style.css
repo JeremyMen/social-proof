@@ -1,0 +1,210 @@
+/*
+** Layout: 
+** - Mobile: 375px
+** - Desktop: 1440px
+*/
+
+:root {
+  --color-very-dark-magenta: hsl(300, 43%, 22%);
+  --color-soft-pink: hsl(333, 80%, 67%);
+  --color-dark-grayish-magenta: hsl(303, 10%, 53%);
+  --color-ligth-grayish-magenta: hsl(300, 24%, 96%);
+  --color-white: hsl(0, 0%, 100%);
+  --font-size: 15px;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-700: 700;
+  /*
+  ** Weights: 400, 500, 700
+  */
+  --font-family: 'League Spartan', sans-serif;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  text-align: center;
+}
+
+.social-proof {
+  padding: 4rem 2rem;
+  background-image: url('./images/bg-pattern-top-mobile.svg'), url('./images/bg-pattern-bottom-mobile.svg');
+  background-position: top, bottom;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.social-proof__title {
+  color: var(--color-very-dark-magenta);
+  font-size: 2rem;
+  font-weight: var(--font-weight-700);
+  letter-spacing: -0.05rem;
+}
+
+.social-proof__paragraph {
+  margin-top: 1rem;
+  color: var(--color-dark-grayish-magenta);
+  font-weight: var(--font-weight-500);
+  line-height: 1.2rem;
+}
+
+.social-proof__ratings {
+  margin-top: 2rem;
+}
+
+.social-proof__rating {
+  margin-top: 1rem;
+  background-color: var(--color-ligth-grayish-magenta);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+.social-proof__ratings-stars {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.social-proof__ratings-text {
+  margin-top: 1rem;
+  font-weight: var(--font-weight-700);
+  color: var(--color-very-dark-magenta);
+}
+
+.social-proof__reviews {
+  margin-top: 2rem;
+}
+
+.social-proof__review {
+  margin-top: 1rem;
+  background-color: var(--color-very-dark-magenta);
+  color: var(--color-white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.social-proof__review-user {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-proof__review-user-img {
+  border-radius: 3rem;
+  width: 3rem;
+}
+
+.social-proof__review-user-name, .social-proof__review-user-verified  {
+  font-size: var(--font-size);
+}
+
+.social-proof__review-user-verified {
+  margin-top: 0.2rem;
+  color: var(--color-soft-pink);
+}
+
+.social-proof__review-comment {
+  margin-top: 1rem;
+  line-height: 1.2rem;
+  text-align: left;
+}
+
+/*
+** from 375px these css rules are going to be applied
+*/
+
+@media screen and (min-width: 375px) {
+  .social-proof {
+    min-height: 100vh;
+    background-image: url('./images/bg-pattern-top-desktop.svg'), url('./images/bg-pattern-bottom-desktop.svg');
+    background-position: top left, bottom right;
+  }
+}
+
+/*
+** from 1024px these css rules are going to be applied
+*/
+
+@media screen and (min-width: 1024px) {
+  .social-proof {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 8rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .social-proof__main-text {
+    flex-basis: 33%;
+    text-align: left;
+  }
+
+  .social-proof__title {
+    font-size: 3rem;
+  }
+
+  .social-proof__ratings {
+    margin-top: 0;
+    flex-basis: 50%;
+  }
+
+  .social-proof__ratings-text {
+    margin-top: 0;
+  }
+
+  .social-proof__rating {
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    width: 75%;
+  }
+
+  .social-proof__rating:nth-child(2) {
+    margin-left: 12.5%;
+  }
+
+  .social-proof__rating:nth-child(3) {
+    margin-left: 25%;
+  }
+
+  .social-proof__reviews {
+    margin-top: 4rem;
+    display: flex;
+    gap: 1.5rem;
+    min-height: 234px;
+  }
+
+  .social-proof__review {
+    margin-top: 0;
+    height: 80%;
+  }
+
+  .social-proof__review:nth-child(2) {
+    margin-top: 2%;
+  }
+
+  .social-proof__review:nth-child(3) {
+    margin-top: 4%;
+  }
+}
+
